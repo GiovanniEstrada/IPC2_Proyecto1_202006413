@@ -1,0 +1,22 @@
+digraph G{
+node [shape=plaintext];
+rankdir=LR;
+Matriz [
+label=<<table border='0' cellborder='1' cellspacing='0'> 
+<tr>
+<td></td>
+<td bgcolor="#DE0039">1</td>
+<td bgcolor="#DE0039">2</td>
+</tr>
+<tr>
+<td bgcolor="#0062DE">2</td>
+<td>d</td>
+<td>e</td>
+</tr>
+<tr>
+<td bgcolor="#0062DE">4</td>
+<td></td>
+<td>z</td>
+</tr>
+</table>>];
+}

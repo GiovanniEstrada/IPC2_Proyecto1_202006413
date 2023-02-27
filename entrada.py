@@ -1,8 +1,12 @@
-class CeldaViva():
-    def __init__(self, fila, columna, codigoOrganismo):
-        self.fila = fila
-        self.columna = columna
-        self.codigoOrganismo = codigoOrganismo
+from CeldaViva import CeldaViva
 
-    def __str__(self):
-        return "Prueba"
+
+class Muestra():
+    def __init__(self, filas, columnas, descripcion, codigo, celdasVivas: CeldaViva):
+        self.filas = filas
+        self.columnas = columnas
+        self.celdasVivas = celdasVivas
+        self.siguiente = None
+
+    # def __str__(self):
+    #     return "id: " + self.id + " nombre: " + self.nombre + " subelementos: \n" + str(self.subElementos.recorrer())

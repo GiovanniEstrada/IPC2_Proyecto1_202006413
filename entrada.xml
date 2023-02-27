@@ -2,21 +2,43 @@
     <datosMarte>
         <listaOrganismos>
             <organismo>
-                <codigo>[valorAlfanumerico]</codigo>
-                <nombre>[valorAlfanumerico]</nombre>
+                <codigo>A</codigo>
+                <nombre>Organismo</nombre>
+            </organismo>
+            <organismo>
+                <codigo>B</codigo>
+                <nombre>Organismo</nombre>
+            </organismo>
+            <organismo>
+                <codigo>C</codigo>
+                <nombre>Organismo</nombre>
+            </organismo>
+            <organismo>
+                <codigo>D</codigo>
+                <nombre>Organismo</nombre>
             </organismo>
         </listaOrganismos>
         <listadoMuetras>
             <muestra>
-                <codigo>[valorAlfanumerico]</codigo>
-                <descripcion>[valorAlfanumerico]</descripcion>
-                <filas>[valorNumerico]</filas>
-                <columnas>[valorNumerico]</columnas>
+                <codigo>PRUEBAS</codigo>
+                <descripcion>prueba de codigo</descripcion>
+                <filas>4</filas>
+                <columnas>4</columnas>
                 <listadoCeldasVivas>
                     <celdaViva>
-                        <fila>[valorNumerico]</fila>
-                        <columna>[valorNumerico]</columna>
-                        <codigoOrganismo>[valorAlfanumerico</codigoOrganismo>
+                        <fila>2</fila>
+                        <columna>2</columna>
+                        <codigoOrganismo>A</codigoOrganismo>
+                    </celdaViva>
+                    <celdaViva>
+                        <fila>1</fila>
+                        <columna>1</columna>
+                        <codigoOrganismo>A</codigoOrganismo>
+                    </celdaViva>
+                    <celdaViva>
+                        <fila>3</fila>
+                        <columna>3</columna>
+                        <codigoOrganismo>B</codigoOrganismo>
                     </celdaViva>
                 </listadoCeldasVivas>
             </muestra>
