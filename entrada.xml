@@ -22,8 +22,8 @@
             <muestra>
                 <codigo>PRUEBAS</codigo>
                 <descripcion>prueba de codigo</descripcion>
-                <filas>4</filas>
-                <columnas>4</columnas>
+                <filas>9</filas>
+                <columnas>15</columnas>
                 <listadoCeldasVivas>
                     <celdaViva>
                         <fila>2</fila>
@@ -32,15 +32,16 @@
                     </celdaViva>
                     <celdaViva>
                         <fila>1</fila>
-                        <columna>1</columna>
+                        <columna>8</columna>
                         <codigoOrganismo>A</codigoOrganismo>
                     </celdaViva>
                     <celdaViva>
-                        <fila>3</fila>
+                        <fila>8</fila>
                         <columna>3</columna>
                         <codigoOrganismo>B</codigoOrganismo>
                     </celdaViva>
                 </listadoCeldasVivas>
             </muestra>
+            
         </listadoMuetras>
     </datosMarte>

@@ -58,10 +58,12 @@ from entrada import Muestra
 from Matriz import Matriz
 from ListaOrganismos import ListaOrganismos
 from CeldaViva import CeldaViva
-
+from numeroCelda import NumeroCelda
 
 listaOrganismos = ListaSimple()
 listaCeldaViva = ListaSimple()
+listaGrid = ListaSimple()
+listaMuestras = ListaSimple()
 
 
 class ManejadorCeldasVivas(xml.sax.ContentHandler):
@@ -107,6 +109,7 @@ class ManejadorCeldasVivas(xml.sax.ContentHandler):
     # Se llama cuando se encuentra un elemento de cierre
 
     def endElement(self, tag):
+        nMuestra = 0
         if tag == "organismo":
             organismo = ListaOrganismos(self.codigo, self.nombre)
             listaOrganismos.insertarFin(organismo)
@@ -116,7 +119,10 @@ class ManejadorCeldasVivas(xml.sax.ContentHandler):
             listaCeldaViva.insertarFin(sub)
 
         if tag == "muestra":
-            print("0")
+            nMuestra += 1
+            grid = NumeroCelda(self.filasMuestra, self.columnasMuestra)
+            listaGrid.insertarFin(grid)
+
         self.CurrentData = ""
 
 
@@ -133,10 +139,14 @@ if __name__ == '__main__':
 
     parser.parse("entrada.xml")
 
+    print(listaGrid.getFila())
     print("inicio lista")
 
-    listaOrganismos.recorrer()
-    listaCeldaViva.recorrer()
+    # listaOrganismos.recorrer()
+    # listaCeldaViva.recorrer()
+    # listaCeldaViva.recorrer()
+
+    print(listaCeldaViva.buscar(1))
 
     print("fin de lista")
 
@@ -144,18 +154,6 @@ if __name__ == '__main__':
     print(temporal)
 
     matriz = Matriz()
-
-    matriz.insert(4, 2, "z")
-
-    matriz.insert(2, 1, "d")
-    matriz.insert(2, 2, "e")
-    matriz.insert(2, 3, "f")
-    # # matriz.insert(3, 1, "g")
-    # matriz.insert(3, 2, "h")
-    # matriz.insert(3, 3, "i")
-
-    # matriz.insert(1, 1, "a")
-    # # matriz.insert(1, 2, "b")
-    # # matriz.insert(1, 3, "c")
+    listaCeldaViva.grid(matriz, listaGrid.getFila(), listaGrid.getColumna())
 
     matriz.graficar()

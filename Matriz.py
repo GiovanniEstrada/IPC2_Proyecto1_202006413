@@ -1,7 +1,7 @@
-import os
 from NodoEncabezado import NodoEncabezado
-from NodoInterno import NodoInterno
 from ListaEncabezado import ListaEncabezado
+from NodoInterno import NodoInterno
+import os
 
 
 class Matriz:
@@ -9,17 +9,17 @@ class Matriz:
         self.filas = ListaEncabezado()
         self.columnas = ListaEncabezado()
 
-    def insert(self, pfila, pcol, valor):
+    def insertar(self, pfila, pcol, valor):
         nuevo = NodoInterno(pfila, pcol, valor)
 
-        if self.filas.search(pfila) == None:
-            self.filas.insert(NodoEncabezado(pfila))
+        if self.filas.buscar(pfila) == None:
+            self.filas.insertar(NodoEncabezado(pfila))
 
-        if self.columnas.search(pcol) == None:
-            self.columnas.insert(NodoEncabezado(pcol))
+        if self.columnas.buscar(pcol) == None:
+            self.columnas.insertar(NodoEncabezado(pcol))
 
-        fila = self.filas.search(pfila)
-        col = self.columnas.search(pcol)
+        fila = self.filas.buscar(pfila)
+        col = self.columnas.buscar(pcol)
 
         if fila.acceso == None:
             fila.acceso = nuevo
@@ -87,14 +87,16 @@ class Matriz:
 
         actual = self.columnas.primero
         while actual != None:
-            file.write("<td bgcolor=\"#DE0039\">" + str(actual.id) + "</td>\n")
+            file.write(
+                "<td bgcolor=\"#DE0039\" width='20' height='20'>" + str(actual.id) + "</td>\n")
             actual = actual.siguiente
         file.write("</tr>\n")
 
         actual = self.filas.primero
         while actual != None:
             file.write("<tr>\n")
-            file.write("<td bgcolor=\"#0062DE\">" + str(actual.id) + "</td>\n")
+            file.write(
+                "<td bgcolor=\"#0062DE\" width='20' height='20'>" + str(actual.id) + "</td>\n")
 
             aux = self.columnas.primero
             while aux != None:

@@ -6,23 +6,23 @@ class ListaEncabezado:
         self.primero = None
         self.ultimo = None
 
-    def insert(self, nuevo: NodoEncabezado):
+    def insertar(self, nuevo: NodoEncabezado):
         if self.primero == None:
             self.primero = nuevo
             self.ultimo = nuevo
         else:
-            if nuevo.id < self.primero.id:
+            if int(nuevo.id) < int(self.primero.id):
                 nuevo.siguiente = self.primero
                 self.primero.anterior = nuevo
                 self.primero = nuevo
-            elif nuevo.id > self.ultimo.id:
+            elif int(nuevo.id) > int(self.ultimo.id):
                 nuevo.anterior = self.ultimo
-                self.ultimo.siguiente = self.ultimo
-                self.utlimo = nuevo
+                self.ultimo.siguiente = nuevo
+                self.ultimo = nuevo
             else:
                 actual = self.primero
                 while actual != None:
-                    if nuevo.id < actual.id:
+                    if int(nuevo.id) < int(actual.id):
                         nuevo.siguiente = actual
                         nuevo.anterior = actual.anterior
                         actual.anterior.siguiente = nuevo
@@ -30,19 +30,11 @@ class ListaEncabezado:
                         break
                     actual = actual.siguiente
 
-    def search(self, id):
-
+    def buscar(self, id):
         actual = self.primero
         while actual != None:
-            print(f"actual id: {actual.id}")
-            print(f"id: { id}")
-            print(f"actual Sig: {actual.siguiente}")
             if actual.id == id:
-                actual.siguiente = None
-                print("listo")
                 return actual
-            # if actual.siguiente == actual:
-            #     return None
             actual = actual.siguiente
         return None
 

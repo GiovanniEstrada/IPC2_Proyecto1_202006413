@@ -3,6 +3,7 @@ class NodoInterno:
         self.fila = fila
         self.col = col
         self.valor = val
+
         self.arriba = None
         self.abajo = None
         self.izquierda = None

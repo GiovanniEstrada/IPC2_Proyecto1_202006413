@@ -29,9 +29,12 @@ class ListaSimple():
         self.tamanio += 1
 
     def recorrer(self):
+        n = 1
         aux = self.inicio
         while aux != None:
             print(aux)
+            aux.id = n
+            n += 1
             aux = aux.siguiente
 
     def buscar(self, id):
@@ -41,6 +44,38 @@ class ListaSimple():
                 return aux
             aux = aux.siguiente
         return None
+
+    def grid(self, matriz, width, heigth):
+        flag = True
+        a = 0
+        while (flag):
+            a += 1
+            matriz.insertar(str(a), "1", "")
+            print(str(a))
+            if a >= int(width):
+                flag = False
+
+        flag = True
+        a = 0
+        while (flag):
+            a += 1
+            matriz.insertar("1", str(a), "")
+            if (a >= int(heigth)):
+                flag = False
+
+        aux = self.inicio
+        while aux != None:
+            matriz.insertar(aux.getFila(), aux.getColumna(),
+                            aux.getOrganismo())
+            aux = aux.siguiente
+
+    def getFila(self):
+        aux = self.inicio
+        return aux.getFila()
+
+    def getColumna(self):
+        aux = self.inicio
+        return aux.getColumna()
 
     # def graphviz(self):
     #     aux = self.inicio
